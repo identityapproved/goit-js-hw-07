@@ -14,3 +14,18 @@
 
 // **************************************************************
 
+const ulEl = document.querySelector('#categories');
+console.log(`В списке ${ulEl.children.length} категории.`)
+
+const ulItemsEl = document.querySelectorAll('.item > h2');
+const iterTitle = ulItemsEl.forEach.call(ulItemsEl, function(h2) {
+   console.log('Категория: ', h2.textContent)
+});
+
+const itemsEl = document.querySelectorAll('.item > ul');
+const iterLi = itemsEl.forEach.call(itemsEl, function (ul) {
+   console.log('Количество элементов: ', ul.children.length)
+}) 
+
+console.log('Категория: ')
+console.log('Количество элементов: ')
