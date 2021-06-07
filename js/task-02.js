@@ -10,3 +10,16 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+
+const ulEl = document.querySelector('ul');
+
+const makeIngredientsList = ingredients => {
+  return ingredients.map(text => {
+    const liEl = document.createElement('li');
+    liEl.textContent = text;
+    return liEl;
+  })
+};
+
+const ingredientsList = makeIngredientsList(ingredients);
+ulEl.append(...ingredientsList);
