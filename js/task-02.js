@@ -11,15 +11,12 @@ const ingredients = [
   'Приправы',
 ];
 
-const ulEl = document.querySelector('ul');
+const ulEl = document.querySelector('ul')
 
-const makeIngredientsList = ingredients => {
-  return ingredients.map(text => {
-    const liEl = document.createElement('li');
-    liEl.textContent = text;
-    return liEl;
+const makeIngredientsList = ingredients.map(text => {
+    const liEl = document.createElement('li')
+    liEl.textContent = text
+    return liEl
   })
-};
 
-const ingredientsList = makeIngredientsList(ingredients);
-ulEl.append(...ingredientsList);
+ulEl.append(...makeIngredientsList)
