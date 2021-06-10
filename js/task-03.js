@@ -21,9 +21,9 @@ ulListEl.style.padding = '0';
 ulListEl.style.display = 'flex';
 ulListEl.style.justifyContent = 'space-evenly';
 
-images.forEach(({ url, alt }) => {
-  ulListEl.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src='${url}' alt='${alt}' height=300px ></li>`
-  );
-});
+function createImagesMarkup() {
+  return images.map(({ url, alt }) => `<li><img src='${url}' alt='${alt}' height=300px ></li>`)
+    .join(' ')
+}
+
+ulListEl.insertAdjacentHTML('beforeend', createImagesMarkup(images))
