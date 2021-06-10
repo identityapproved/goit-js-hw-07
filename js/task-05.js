@@ -7,7 +7,7 @@ const inputNameEl = document.querySelector('#name-input')
 const nameOutEl = document.querySelector('#name-output')
 
 const enterName = function (input) {
-   const value = input.currentTarget.value
+   const value = input.currentTarget.value.trim()
 
    if (value !== '') {
       return nameOutEl.textContent = value
