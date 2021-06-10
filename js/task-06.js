@@ -8,17 +8,20 @@
 Для добавления стилей, используй CSS-классы valid и invalid. */
 
 const inputEl = document.querySelector('#validation-input')
-const validLength = inputEl.dataset.length
+const validLength = Number(inputEl.dataset.length)
 
 inputEl.addEventListener("blur", e => {
    const value = e.currentTarget.value
-   if (value.length < validLength) {
-      e.currentTarget.classList.add('invalid')
-   } else if (value.length >= validLength) {  
-      if (e.currentTarget.classList.contains('invalid')) {  
+   if (value.length === validLength) {
+      if (e.currentTarget.classList.contains('invalid')) {
          e.currentTarget.classList.remove('invalid')
          e.currentTarget.classList.add('valid')
-      } else e.currentTarget.classList.add('valid')
+      } else { e.currentTarget.classList.add('valid') }
+   } else if (value.length > validLength || value.length < validLength) {  
+      if (e.currentTarget.classList.contains('valid')) {  
+         e.currentTarget.classList.remove('valid')
+         e.currentTarget.classList.add('invalid')
+      } else e.currentTarget.classList.add('invalid')
       }
    }
 );
