@@ -18,6 +18,8 @@ const inputEl = document.querySelector('#controls input')
 const renderBtn = document.querySelector('[data-action="render"]')
 const destrBtn = document.querySelector('[data-action="destroy"]')
 const boxContainer = document.querySelector('#boxes')
+boxContainer.style.display = 'flex'
+boxContainer.style.flexWrap = 'wrap'
 
 const createBoxes = () => {
    const arrayOfBoxes = []
@@ -30,14 +32,13 @@ const createBoxes = () => {
       divItem.style.width = `${defBoxSize + index * 10}px`
       divItem.style.height = `${defBoxSize + index * 10}px`
       divItem.style.backgroundColor = `${getRandomRGB}`
-      items.push(divItem)
+      arrayOfBoxes.push(divItem)
    }
    return boxContainer.append(...arrayOfBoxes)
 }
 
 const destroyBoxes = () => {
    boxContainer.innerHTML = ''
-
 }
 
 renderBtn.addEventListener('click', createBoxes)
